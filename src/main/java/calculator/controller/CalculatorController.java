@@ -19,8 +19,8 @@ public class CalculatorController {
     public void run() {
         String rawInputValue = inputView.readInputValue();
 
-        Delimiter delimiter = new Delimiter();
-        List<Integer> inputNumbers = delimiter.separateByDefaultDelimiter(rawInputValue);
+        Delimiter delimiter = new Delimiter(rawInputValue);
+        List<Integer> inputNumbers = delimiter.separate(rawInputValue);
 
         Calculator calculator = new Calculator();
         int sum = calculator.sum(inputNumbers);
