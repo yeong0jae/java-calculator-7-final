@@ -6,8 +6,13 @@ import java.util.List;
 
 public class CalculatorController {
 
+    private final InputView inputView;
+
+    public CalculatorController(InputView inputView) {
+        this.inputView = inputView;
+    }
+
     public void run() {
-        InputView inputView = new InputView();
         String rawInputValue = inputView.readInputValue();
 
         List<Integer> inputNumbers = List.of(1, 2, 3);
