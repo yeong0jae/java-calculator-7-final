@@ -1,6 +1,7 @@
 package calculator.controller;
 
-import calculator.Calculator;
+import calculator.domain.Calculator;
+import calculator.domain.Delimiter;
 import calculator.view.InputView;
 import java.util.List;
 
@@ -15,7 +16,8 @@ public class CalculatorController {
     public void run() {
         String rawInputValue = inputView.readInputValue();
 
-        List<Integer> inputNumbers = List.of(1, 2, 3);
+        Delimiter delimiter = new Delimiter();
+        List<Integer> inputNumbers = delimiter.separate(rawInputValue);
 
         Calculator calculator = new Calculator();
         calculator.sum(inputNumbers);
