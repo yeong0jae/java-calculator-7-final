@@ -18,4 +18,15 @@ class DelimiterTest {
         Assertions.assertThat(separatedValue).isEqualTo(List.of(1, 2, 3));
     }
 
+    @Test
+    @DisplayName("문자열을 커스텀 구분자를 기준으로 구분한다.")
+    void separateByCustomTest() {
+        String rawInputValue = "//;\n1;2;3";
+        Delimiter delimiter = new Delimiter(rawInputValue);
+
+        List<Integer> separatedValue = delimiter.separate(rawInputValue);
+
+        Assertions.assertThat(separatedValue).isEqualTo(List.of(1, 2, 3));
+    }
+
 }

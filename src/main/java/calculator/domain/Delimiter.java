@@ -16,7 +16,7 @@ public class Delimiter {
     private String extractCustomDelimiter(String rawInputValue) {
         if (rawInputValue.startsWith("//")) {
             if (rawInputValue.charAt(3) == '\n') {
-                return String.valueOf(rawInputValue.charAt(3));
+                return String.valueOf(rawInputValue.charAt(2));
             }
         }
         return "";
@@ -28,7 +28,7 @@ public class Delimiter {
             splitInput = rawInputValue.split("[" + COMMA + COLON + "]");
             return convertTo(splitInput);
         }
-        splitInput = rawInputValue.split(customDelimiter);
+        splitInput = rawInputValue.substring(4).split(customDelimiter);
         return convertTo(splitInput);
     }
 
