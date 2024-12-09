@@ -20,7 +20,7 @@ public class CalculatorController {
         String rawInputValue = inputView.readInputValue();
 
         Delimiter delimiter = new Delimiter();
-        List<Integer> inputNumbers = delimiter.separate(rawInputValue);
+        List<Integer> inputNumbers = delimiter.separateByDefaultDelimiter(rawInputValue);
 
         Calculator calculator = new Calculator();
         int sum = calculator.sum(inputNumbers);

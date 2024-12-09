@@ -8,7 +8,7 @@ public class Delimiter {
     private final String COMMA = ",";
     private final String COLON = ":";
 
-    public List<Integer> separate(String rawInputValue) {
+    public List<Integer> separateByDefaultDelimiter(String rawInputValue) {
         String[] separatedInput = rawInputValue.split("[" + COMMA + COLON + "]");
 
         return Arrays.stream(separatedInput)
