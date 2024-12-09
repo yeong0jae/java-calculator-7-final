@@ -3,14 +3,17 @@ package calculator.controller;
 import calculator.domain.Calculator;
 import calculator.domain.Delimiter;
 import calculator.view.InputView;
+import calculator.view.OutputView;
 import java.util.List;
 
 public class CalculatorController {
 
     private final InputView inputView;
+    private final OutputView outputView;
 
-    public CalculatorController(InputView inputView) {
+    public CalculatorController(InputView inputView, OutputView outputView) {
         this.inputView = inputView;
+        this.outputView = outputView;
     }
 
     public void run() {
@@ -20,7 +23,9 @@ public class CalculatorController {
         List<Integer> inputNumbers = delimiter.separate(rawInputValue);
 
         Calculator calculator = new Calculator();
-        calculator.sum(inputNumbers);
+        int sum = calculator.sum(inputNumbers);
+
+        outputView.printResult(sum);
     }
 
 }
