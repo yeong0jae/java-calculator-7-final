@@ -11,9 +11,9 @@ class CalculatorTest {
     @DisplayName("구분된 숫자의 합을 계산한다.")
     void sumTest() {
         List<Integer> numbers = List.of(1, 2, 3);
-        Calculator calculator = new Calculator();
+        Calculator calculator = new Calculator(numbers);
 
-        int sum = calculator.sum(numbers);
+        int sum = calculator.sum();
 
         Assertions.assertThat(sum).isEqualTo(6);
     }
