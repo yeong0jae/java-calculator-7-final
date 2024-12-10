@@ -13,7 +13,6 @@ class ApplicationTest extends NsTest {
         assertSimpleTest(() -> {
             run("//;\\n1");
             assertThat(output()).contains("결과 : 1");
-
         });
     }
 
